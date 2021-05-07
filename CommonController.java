@@ -8,23 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.huangyuhui.sms.bean.Admin;
 import pers.huangyuhui.sms.bean.Student;
-import pers.huangyuhui.sms.bean.Teacher;
 import pers.huangyuhui.sms.service.AdminService;
 import pers.huangyuhui.sms.service.StudentService;
-import pers.huangyuhui.sms.service.TeacherService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @project: sms
- * @description: 控制器-管理个人信息管理页面
- * @author: 黄宇辉
- * @date: 6/18/2019-1:12 PM
- * @version: 1.0
- * @website: https://yubuntu0109.github.io/
- */
+
 @Controller
 @RequestMapping("/common")
 public class CommonController {

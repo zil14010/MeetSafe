@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pers.huangyuhui.sms.bean.Admin;
 import pers.huangyuhui.sms.bean.LoginForm;
 import pers.huangyuhui.sms.bean.Student;
-import pers.huangyuhui.sms.bean.Teacher;
 import pers.huangyuhui.sms.service.AdminService;
 import pers.huangyuhui.sms.service.StudentService;
-import pers.huangyuhui.sms.service.TeacherService;
 import pers.huangyuhui.sms.util.CreateVerifiCodeImage;
 
 import javax.imageio.ImageIO;
@@ -133,7 +131,6 @@ public class SystemController {
                     return result;
                 }
                 break;
-            //教师身份
         }
         //登录失败
         result.put("success", false);

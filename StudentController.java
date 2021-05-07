@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import pers.huangyuhui.sms.bean.Student;
-import pers.huangyuhui.sms.service.ClazzService;
 import pers.huangyuhui.sms.service.StudentService;
 import pers.huangyuhui.sms.util.UploadFile;
 
@@ -20,21 +19,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * @project: sms
- * @description: 控制器-管理学生信息页面
- * @author: 黄宇辉
- * @date: 6/16/2019-10:50 AM
- * @version: 1.0
- * @website: https://yubuntu0109.github.io/
- */
+
 @Controller
 @RequestMapping("/student")
 public class StudentController {
 
     // 注入业务对象
-    @Autowired
-    private ClazzService clazzService;
     @Autowired
     private StudentService studentService;
 
@@ -50,7 +40,6 @@ public class StudentController {
     @GetMapping("/goStudentListView")
     public ModelAndView goStudentListView(ModelAndView modelAndView) {
         //向页面发送一个存储着Clazz的List对象
-        modelAndView.addObject("clazzList", clazzService.selectAll());
         modelAndView.setViewName("student/studentList");
         return modelAndView;
     }
@@ -67,7 +56,7 @@ public class StudentController {
      */
     @PostMapping("/getStudentList")
     @ResponseBody
-    public Map<String, Object> getStudentList(Integer page, Integer rows, String studentname, String clazzname) {
+    public Map<String, Object> getStudentList(Integer page, Integer rows, String studentname) {
 
         //存储查询的studentname,clazzname信息, 我修改了clazzname，暂时不知道你们怎么对待clazz
         Student student = new Student(studentname);
