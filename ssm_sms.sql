@@ -48,7 +48,7 @@ UNLOCK TABLES;
 --
 -- Table structure for table `tb_clazz`
 --
-
+/*
 DROP TABLE IF EXISTS `tb_clazz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -65,20 +65,20 @@ CREATE TABLE `tb_clazz` (
   KEY `tb_clazz_tb_grade__fk_idx` (`grade_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+*/
 --
 -- Dumping data for table `tb_clazz`
 --
-
+/*
 LOCK TABLES `tb_clazz` WRITE;
 /*!40000 ALTER TABLE `tb_clazz` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tb_clazz` ENABLE KEYS */;
 UNLOCK TABLES;
-
+*/
 --
 -- Table structure for table `tb_grade`
 --
-
+/*
 DROP TABLE IF EXISTS `tb_grade`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -101,7 +101,7 @@ LOCK TABLES `tb_grade` WRITE;
 /*!40000 ALTER TABLE `tb_grade` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tb_grade` ENABLE KEYS */;
 UNLOCK TABLES;
-
+*/
 --
 -- Table structure for table `tb_student`
 --
@@ -120,7 +120,6 @@ CREATE TABLE `tb_student` (
   `address` varchar(100) NOT NULL,
   `introducation` varchar(200) DEFAULT NULL,
   `portrait_path` varchar(200) DEFAULT NULL,
-  `clazz_name` varchar(15) NOT NULL,/*未知clazz改变*/
   PRIMARY KEY (`id`),
   UNIQUE KEY `tb_student_sno_uindex` (`sno`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
