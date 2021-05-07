@@ -69,8 +69,8 @@ public class StudentController {
     @ResponseBody
     public Map<String, Object> getStudentList(Integer page, Integer rows, String studentname, String clazzname) {
 
-        //存储查询的studentname,clazzname信息
-        Student student = new Student(studentname, clazzname);
+        //存储查询的studentname,clazzname信息, 我修改了clazzname，暂时不知道你们怎么对待clazz
+        Student student = new Student(studentname);
         //设置每页的记录数
         PageHelper.startPage(page, rows);
         //根据班级与学生名获取指定或全部学生信息列表

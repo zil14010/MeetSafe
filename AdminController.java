@@ -172,5 +172,5 @@ public class AdminController {
         //返回头像的上传结果
         return UploadFile.getUploadResult(photo, dirPath, portraitPath);
     }
-
+    
 }

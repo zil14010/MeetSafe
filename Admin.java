@@ -1,23 +1,12 @@
 package pers.huangyuhui.sms.bean;
-
-/**
- * @project: sms
- * @description: 管理员信息
- * @author: 黄宇辉
- * @date: 6/10/2019-3:41 PM
- * @version: 1.0
- * @website: https://yubuntu0109.github.io/
- */
 public class Admin {
 
     private Integer id;
     private String name;
-    private char gender;
     private String password;
     private String email;
-    private String telephone;
     private String address;
-    private String portrait_path;//存储头像的项目路径
+    private String portrait_path;
 
     public Integer getId() {
         return id;
@@ -35,16 +24,10 @@ public class Admin {
         this.name = name;
     }
 
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
-
     public String getPassword() {
-        return password;
+        int hash_code = additiveHash(this.password,5);
+        String string_code = hash_code + "";
+        return string_code;
     }
 
     public void setPassword(String password) {
@@ -57,14 +40,6 @@ public class Admin {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
     }
 
     public String getAddress() {
@@ -82,9 +57,6 @@ public class Admin {
     public void setPortrait_path(String portrait_path) {
         this.portrait_path = portrait_path;
     }
-
-    
-
 
     public static int additiveHash(String key, int prime) {
         int hash, i;

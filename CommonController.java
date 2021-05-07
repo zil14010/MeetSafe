@@ -33,8 +33,6 @@ public class CommonController {
     @Autowired
     private AdminService adminService;
     @Autowired
-    private TeacherService teacherService;
-    @Autowired
     private StudentService studentService;
 
     //存储预返回给页面的结果对象
@@ -67,7 +65,7 @@ public class CommonController {
         //管理员身份
         if (userType == 1) {
             Admin admin = (Admin) request.getSession().getAttribute("userInfo");
-            if (!admin.getPassword().equals(oldPassword)) {
+            if (!admin.getPassword().equals(additiveHash(oldPassword,5)+ "")) {
                 result.put("success", false);
                 result.put("msg", "原密码错误!");
                 return result;
@@ -88,7 +86,7 @@ public class CommonController {
         //学生身份
         if (userType == 2) {
             Student student = (Student) request.getSession().getAttribute("userInfo");
-            if (!student.getPassword().equals(oldPassword)) {
+            if (!student.getPassword().equals(additiveHash(oldPassword,5)+ "")) {
                 result.put("success", false);
                 result.put("msg", "原密码错误!");
                 return result;
@@ -105,27 +103,12 @@ public class CommonController {
             }
         }
 
-        //教师身份
-        if (userType == 3) {
-            Teacher teacher = (Teacher) request.getSession().getAttribute("userInfo");
-            if (!teacher.getPassword().equals(oldPassword)) {
-                result.put("success", false);
-                result.put("msg", "原密码错误!");
-                return result;
-            }
-            try {
-                teacher.setPassword(newPassword);
-                if (teacherService.updatePassowrd(teacher) > 0) {
-                    result.put("success", true);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                result.put("success", false);
-                result.put("msg", "修改失败! 服务器端发生异常!");
-            }
-        }
-
         return result;
     }
-
+    public static int additiveHash(String key, int prime) {
+        int hash, i;
+        for (hash = key.length(), i = 0; i < key.length(); i++)
+            hash += key.charAt(i);
+        return (hash % prime);
+    }
 }
