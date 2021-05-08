@@ -1,0 +1,14 @@
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/service/ActivityService.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/dao/ActivityMapper.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/dao/CategoryMapper.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/entity/Activity.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/service/impl/CategoryServiceImpl.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/entity/CategoryExample.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/entity/Category.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/controller/SystemController.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/controller/CategoryController.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/entity/PersonActivity.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/controller/ActivityController.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/service/impl/ActivityServiceImpl.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/service/CategoryService.java
+/Users/roy/Desktop/newMeetsafe/src/main/java/com/ood/team/entity/ActivityExample.java
